@@ -1,0 +1,39 @@
+namespace CuoiKi1111.Models
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("NhanVien")]
+    public partial class NhanVien
+    {
+        [Key]
+        [Required(ErrorMessage ="Khong duoc bo trong")]
+        [DisplayName("Ma")]
+        public int Manv { get; set; }
+
+        [StringLength(30)]
+        [Required(ErrorMessage = "Khong duoc bo trong")]
+        [DisplayName("Ho Ten")]
+        public string Hoten { get; set; }
+        [Required(ErrorMessage = "Khong duoc bo trong")]
+        [DisplayName("tuoi")]
+
+        public int? Tuoi { get; set; }
+
+        [StringLength(30)]
+        [Required(ErrorMessage = "Khong duoc bo trong")]
+        [DisplayName("Dia Chi")]
+        public string Diachi { get; set; }
+        [Required(ErrorMessage = "Khong duoc bo trong")]
+        [DisplayName("Luong")]
+        public int? Luong { get; set; }
+
+        public int? Maphong { get; set; }
+
+        public virtual Phong Phong { get; set; }
+    }
+}
